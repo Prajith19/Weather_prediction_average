@@ -50,7 +50,7 @@ print(f'Precipitation_sum {precipitation_sum}')
 print("                     ")
 print(f'Windspeed_10_max {windspeed_10m_max}')
 
-predicted_weather_code = sum(weathercode)/len(weathercode)
+predicted_weather_code = max(set(weathercode),key=weathercode.count)
 predicted_apparent_temperature_max = sum(apparent_temperature_max)/len(apparent_temperature_max)
 predicted_apparent_temperature_min = sum(apparent_temperature_min)/len(apparent_temperature_min)
 predicted_precipitation_sum = sum(precipitation_sum)/len(precipitation_sum)
@@ -72,7 +72,7 @@ print(f'Predicted Precipitation Sum --> {round_precipitation_sum} mm')
 print(f'Predicted Windspeed_10m_max --> {round_windspeed_10_max} km/h')
 print("                      ")
 if round_weather_code >= 0 and round_weather_code <= 3:
-    print("Description --> No meteors except photometeors")
+    print("Description --> Clear sky, no precipitation")
 
 if round_weather_code >=4 and round_weather_code <= 9:
     print("Description --> Haze, dust, sand or smoke")
